@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAD085"
+    tools:context=".LoginActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="122dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="136dp"
+        android:background="#651414"
+        android:backgroundTint="#BD4A4A"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="LOGIN"
+        android:textColor="#F9F7C7"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:rippleColor="#2196F3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Dont Have an Account ?"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="162dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Register Now!"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="203dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="109dp"
+        android:fontFamily="@font/poppins_bold"
+        android:foregroundGravity="center"
+        android:text="JSLEEP"
+        android:textAlignment="center"
+        android:textColor="#E2EEFF"
+        android:textSize="50sp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="baseline"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="252dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="53dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Enter your Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="252dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="9dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
