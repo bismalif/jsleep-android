@@ -11,4 +11,16 @@ public class Account extends Serializable {
         super(id);
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "balance= " + balance +
+                ", email= '" + email + '\'' +
+                ", name= '" + name + '\'' +
+                ", password= '" + password + '\'' +
+                ", renter= " + renter +
+                '}';
+    }
+
+
 }

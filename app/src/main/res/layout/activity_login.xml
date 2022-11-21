@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="139dp"
         android:layout_height="58dp"
         android:layout_marginTop="77dp"
@@ -20,7 +20,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEdit"
         app:rippleColor="#2196F3" />
 
     <TextView
@@ -33,13 +33,13 @@
         android:textAlignment="center"
         android:textColor="#E2EEFF"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="168dp"
@@ -74,7 +74,7 @@
         app:layout_constraintVertical_bias="0.387" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/passwordEdit"
         android:layout_width="252dp"
         android:layout_height="62dp"
         android:layout_marginBottom="80dp"
@@ -85,13 +85,13 @@
         android:inputType="textPassword"
         android:textColor="#F9F2D7"
         android:textColorHint="#F9F2D7"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailEdit"
         android:layout_width="252dp"
         android:layout_height="62dp"
         android:layout_marginTop="140dp"
@@ -102,7 +102,7 @@
         android:inputType="textEmailAddress"
         android:textColor="#F9F2D7"
         android:textColorHint="#F9F2D7"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
