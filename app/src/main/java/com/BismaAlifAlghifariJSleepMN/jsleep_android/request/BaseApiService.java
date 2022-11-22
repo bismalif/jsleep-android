@@ -22,6 +22,11 @@ public interface BaseApiService {
     @GET("room/{id}")
     Call<Room> getRoom (@Path("id") int id);
 
+    @POST("account/register")
+    Call<Account> register  (@Query("name") String name,
+                             @Query("email") String email,
+                             @Query("password") String password);
+
 
 
 }
