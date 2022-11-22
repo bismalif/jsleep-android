@@ -24,7 +24,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText username,password;
+    EditText email,password;
     Context mContext;
 
     @Override
@@ -34,16 +34,14 @@ public class LoginActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
         TextView register = findViewById(R.id.registerButton);
-        username = findViewById(R.id.emailEdit);
+        email = findViewById(R.id.emailEdit);
         password = findViewById(R.id.passwordEdit);
-
         Button mainActivity = findViewById(R.id.login);
+
         mainActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Intent move = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(move);
-                Account account = requestAccount();
+                Account account = requestLogin();
             }
         });
 
@@ -56,9 +54,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 
     protected Account requestAccount(){
@@ -69,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
                     Account account;
                     account = response.body();
                     System.out.println(account.toString());
+                    Intent move = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(move);
                 }
             }
 
@@ -79,5 +76,34 @@ public class LoginActivity extends AppCompatActivity {
         });
         return null;
     }
+
+    protected Account requestLogin(){
+        mApiService.login(email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if(response.isSuccessful()){
+
+                    MainActivity.cookies = response.body();
+
+                    Intent go = new Intent(LoginActivity.this,
+                            MainActivity.class);
+
+                    startActivity(go);
+                    Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t){
+                System.out.println(t.toString());
+
+                Toast.makeText(mContext, "Invalid email or password",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return null;
+    }
+
 
 }

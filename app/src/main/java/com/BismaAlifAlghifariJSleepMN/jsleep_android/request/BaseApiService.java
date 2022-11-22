@@ -21,4 +21,7 @@ public interface BaseApiService {
 
     @GET("room/{id}")
     Call<Room> getRoom (@Path("id") int id);
+
+
+
 }
