@@ -21,8 +21,9 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText username, email,  password;
+    EditText name, email,  password;
     Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        username = findViewById(R.id.registerName);
+        name = findViewById(R.id.registerName);
         email = findViewById(R.id.registerEmail);
         password = findViewById(R.id.registerPassword);
         Button mainActivity = findViewById(R.id.registerButton2);
@@ -38,13 +39,13 @@ public class RegisterActivity extends AppCompatActivity {
         mainActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Account account = requestLogin();
+                Account account = requestRegister();
             }
         });
     }
 
-    protected Account requestLogin(){
-        mApiService.login(email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+    protected Account requestRegister(){
+        mApiService.register(name.getText().toString(), email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
@@ -63,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onFailure(Call<Account> call, Throwable t){
                 System.out.println(t.toString());
 
-                Toast.makeText(mContext, "Invalid input for email or password",
+                Toast.makeText(mContext, "Account Already Exist",
                         Toast.LENGTH_SHORT).show();
             }
         });

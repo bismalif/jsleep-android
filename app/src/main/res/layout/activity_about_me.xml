@@ -4,86 +4,471 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:outlineProvider="bounds"
+    android:background="#FAD085"
     tools:context=".AboutMeActivity">
 
-    <TextView
-        android:id="@+id/judulAboutMe"
-        android:layout_width="wrap_content"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAccount"
+        android:layout_width="347dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-500dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="Account Details"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
+        android:outlineProvider="none"
+        android:visibility="visible"
+        app:cardBackgroundColor="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/detailNama"
-        android:layout_width="321dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:inputType="textPersonName"
-        android:text="Name                     Bisma Alif Alghifari"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulAboutMe" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/detailEmail"
-        android:layout_width="321dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:inputType="textPersonName"
-        android:text="Email                     bisma.alif@ui.ac.id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailNama" />
+            <LinearLayout
+                android:id="@+id/linearTitle"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/detailBalance"
-        android:layout_width="321dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:inputType="textPersonName"
-        android:text="Balance                                                 0.0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailEmail" />
+                <TextView
+                    android:id="@+id/TitleAboutMe"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_extrabold"
+                    android:text="Account Details"
+                    android:textColor="#172E4D"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextNumberDecimal"
-        android:layout_width="169dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="100dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Amount"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailBalance" />
+            <LinearLayout
+                android:id="@+id/linearName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="65dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="100dp"
+                    android:insetRight="10dp"
+                    android:text="Name"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/detailName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:insetRight="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="72dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="100dp"
+                    android:insetRight="10dp"
+                    android:text="Email"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/detailEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:insetRight="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearBalance"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="43dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="100dp"
+                    android:insetRight="10dp"
+                    android:text="Balance"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/detailBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:insetRight="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearTopUp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="horizontal"
+                android:textAlignment="center">
+
+
+                <EditText
+                    android:id="@+id/editAmount"
+                    android:layout_width="182dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="20dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Amount"
+                    android:inputType="numberDecimal"
+                    android:insetLeft="200dp"
+                    android:insetRight="5dp"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/TopUp"
+                    android:layout_width="126dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="20dp"
+                    android:backgroundTint="#FF9D36"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="5dp"
+                    android:insetRight="5dp"
+                    android:text="TopUp"
+                    android:textAlignment="center"
+                    android:textColor="#172E4D"
+                    android:textSize="15sp"
+                    app:cornerRadius="50dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="104dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="180dp"
+        android:id="@+id/registerRenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:backgroundTint="#FF9D36"
+        android:fontFamily="@font/poppins_bold"
+        android:text="REGISTER RENTER"
+        android:textColor="#172E4D"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardRenterDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardAccount" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRegisterRenter"
+        android:layout_width="347dp"
+        android:layout_height="350dp"
         android:layout_marginBottom="100dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="TopUp"
+        android:outlineProvider="none"
+        android:visibility="visible"
+        app:cardBackgroundColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailBalance" />
+        app:layout_constraintTop_toBottomOf="@+id/cardAccount">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearRegTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/registerRenterTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="25dp"
+                    android:fontFamily="@font/poppins_extrabold"
+                    android:text="Register Renter"
+                    android:textAlignment="center"
+                    android:textColor="#172E4D"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinRegName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/registerRenterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="18dp"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinRegAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/registerRenterAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Address"
+                    android:inputType="textPersonName"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinRegPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/registerRenterPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Phone Number"
+                    android:inputType="text|number"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinRegCancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/newRegisterRenter"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginStart="16dp"
+
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#FF9D36"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Register"
+                    android:textAlignment="center"
+                    android:textColor="#172E4D"
+                    android:textSize="15sp"
+                    app:cornerRadius="50dp" />
+
+                <Button
+                    android:id="@+id/registerRenterCancel"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="15dp"
+
+                    android:backgroundTint="#FF9D36"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:textColor="#172E4D"
+                    android:textSize="15sp"
+                    app:cornerRadius="50dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRenterDetails"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:outlineProvider="none"
+        android:visibility="gone"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardAccount">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linRegDetails"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/titleRegisterDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_extrabold"
+                    android:text="Renter Details"
+                    android:textAlignment="center"
+                    android:textColor="#172E4D"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearNameRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textRenterName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="65dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="100dp"
+                    android:insetRight="10dp"
+                    android:text="Name"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/detailRenterName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:insetRight="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textRenterAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="65dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="100dp"
+                    android:insetRight="10dp"
+                    android:text="Address"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/detailRenterAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:insetRight="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textRenterPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:insetLeft="100dp"
+                    android:insetRight="10dp"
+                    android:text="Phone Number"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/detailRenterPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_medium"
+                    android:insetRight="5dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

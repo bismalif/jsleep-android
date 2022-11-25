@@ -26,29 +26,30 @@ public class MainActivity extends AppCompatActivity {
 
     public static Account cookies;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Gson gson = new Gson();
+//        Gson gson = new Gson();
         InputStream filepath = null;
         ArrayList<String> name = new ArrayList<String>();
         ArrayList<Room> roomList  = new ArrayList<Room>();
-        try {
-            filepath = getAssets().open("randomRoomList.json");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(filepath));
-            Room[] acc = gson.fromJson(reader, Room[].class);
-            Collections.addAll(roomList, acc);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for (Room room : roomList) {
-            name.add(room.name);
-        }
-        ArrayAdapter<String> roomAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
-        ListView view = (ListView) findViewById(R.id.listviewer);
-        view.setAdapter(roomAdapter);
+//        try {
+//            filepath = getAssets().open("randomRoomList.json");
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(filepath));
+//            Room[] acc = gson.fromJson(reader, Room[].class);
+//            Collections.addAll(roomList, acc);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (Room room : roomList) {
+//            name.add(room.name);
+//        }
+//        ArrayAdapter<String> roomAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, name);
+//        ListView view = (ListView) findViewById(R.id.listviewer);
+//        view.setAdapter(roomAdapter);
     }
 
     @Override

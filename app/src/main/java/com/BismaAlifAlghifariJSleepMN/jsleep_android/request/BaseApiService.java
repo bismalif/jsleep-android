@@ -1,9 +1,15 @@
 package com.BismaAlifAlghifariJSleepMN.jsleep_android.request;
 
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Account;
+import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.BedType;
+import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.City;
+import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Facility;
+import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Renter;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Room;
 
 import java.net.PasswordAuthentication;
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -27,6 +33,22 @@ public interface BaseApiService {
                              @Query("email") String email,
                              @Query("password") String password);
 
+    @POST("account/{id}/registerRenter")
+    Call<Renter> registerRenter(@Path("id") int id,
+                                @Query("username") String username,
+                                @Query("address") String address,
+                                @Query("phoneNumber") String phoneNumber);
 
+    @POST("room/create")
+    Call<Room> room(@Query("accountId") int accountId,
+                    @Query("name") String name,
+                    @Query("size") int size,
+                    @Query("price") int price,
+                    @Query("facility") ArrayList<Facility> facility,
+                    @Query("city") City city,
+                    @Query("address") String address,
+                    @Query("bedType") BedType bedType);
 
+    @GET("renter/getAllRoom")
+    Call<List<Room>> getAllRoom (@Query("page") int page, @Query("pageSize")int pageSize);
 }
