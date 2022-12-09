@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/dark_grey"
+    tools:context=".CreateRoomActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/judulCreateRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:paddingStart="20dp"
+            android:text="Create Room"
+            android:textAlignment="textStart"
+
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <EditText
+                android:id="@+id/addName"
+                android:layout_width="350dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/urbanist_semibold"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <EditText
+                android:id="@+id/addPrice"
+                android:layout_width="350dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/urbanist_semibold"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <EditText
+                android:id="@+id/addAddress"
+                android:layout_width="350dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/urbanist_semibold"
+                android:hint="Address"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+            <EditText
+                android:id="@+id/addSize"
+                android:layout_width="350dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:fontFamily="@font/urbanist_semibold"
+                android:hint="Size"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/dark_grey_hint" />
+
+<!--            <EditText-->
+<!--                android:id="@+id/addName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                android:hint="Name"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:textSize="14sp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addPrice"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                android:hint="Price"-->
+<!--                android:inputType="textPersonName"-->
+
+<!--                android:textSize="14sp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addAddress"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                android:hint="Address"-->
+<!--                android:inputType="textPersonName"-->
+
+<!--                android:textSize="14sp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/addSize"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                android:hint="Size"-->
+<!--                android:inputType="textPersonName"-->
+
+<!--                android:textSize="14sp" />-->
+
+            <TextView
+                android:id="@+id/addFacility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:fontFamily="@font/urbanist_bold"
+                android:textColor="@color/white"
+                android:text="Facility"
+
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="348dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/ac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="AC" />
+
+                <RadioButton
+                    android:id="@+id/refrigerator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Refrigerator" />
+
+                <RadioButton
+                    android:id="@+id/wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Wi-Fi" />
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/ac"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="AC"-->
+
+<!--                    android:textSize="14sp" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/refrigerator"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="Refrigerator"-->
+
+<!--                    android:textSize="14sp" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/wifi"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="WiFi"-->
+
+<!--                    android:textSize="14dp" />-->
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="348dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/bathub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Bathtub" />
+
+                <RadioButton
+                    android:id="@+id/balcony"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Balcony" />
+
+                <RadioButton
+                    android:id="@+id/restaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Restaurant" />
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/bathub"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="Bathtub"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="14dp" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/balcony"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="Balcony"-->
+<!--                    android:textColor="@color/white"-->
+
+<!--                    android:textSize="14dp" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/restaurant"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="Restaurant"-->
+
+<!--                    android:textSize="14dp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="348dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/pool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Swimming Pool" />
+
+                <RadioButton
+                    android:id="@+id/fitness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/green_button"
+                    android:text="Fitness Center" />
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/pool"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="Swimming Pool"-->
+
+<!--                    android:textSize="14dp" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/fitness"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:text="Fitness Center"-->
+
+<!--                    android:textSize="14dp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    android:layout_width="77dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textColor="@color/white"
+                    android:text="City"
+                    />
+
+                <Spinner
+                    android:id="@+id/citySpinner"
+                    android:layout_width="146dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/dark_greybutton"
+                    android:backgroundTintMode="screen"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:gravity="center"
+                    android:popupBackground="@color/dark_grey_hint"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bedTextView"
+                    android:layout_width="77dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textColor="@color/white"
+                    android:text="Bed" />
+
+                <Spinner
+                    android:id="@+id/bedSpinner"
+                    android:layout_width="146dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:spinnerMode="dropdown"
+                    android:backgroundTintMode="screen"
+                    android:popupBackground="@color/dark_grey_hint"
+
+                    android:backgroundTint="@color/dark_greybutton"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/createRoomButton"
+                    android:layout_width="104dp"
+                    android:layout_height="45dp"
+
+                    android:backgroundTint="@color/green_button"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="45dp"
+                    android:gravity="center"
+                    android:text="Create"
+                    android:textAlignment="center"
+
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:cornerRadius="50dp" />
+
+                <Button
+                    android:id="@+id/cancelCreateRoomButton"
+                    android:layout_width="104dp"
+                    android:layout_height="45dp"
+                    android:backgroundTint="@color/green_button"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="75dp"
+                    android:clickable="true"
+                    android:onClick="newRegisterRenter"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

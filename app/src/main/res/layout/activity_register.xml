@@ -4,63 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_grey"
     tools:context=".RegisterActivity">
 
-    <EditText
-        android:id="@+id/registerEmail"
-        android:layout_width="252dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="34dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Enter your email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/registerName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
-
-    <EditText
-        android:id="@+id/registerPassword"
-        android:layout_width="252dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="34dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Enter your password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerEmail" />
-
-    <EditText
-        android:id="@+id/registerName"
-        android:layout_width="252dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="193dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Enter your name"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/registerButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="147dp"
-        android:layout_marginBottom="312dp"
-        android:text="Register"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp">
+
+            <TextView
+                android:id="@+id/registacc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="170dp"
+                android:fontFamily="@font/urbanist_extrabold"
+                android:foregroundGravity="center"
+                android:text="Create your Account"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="45dp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="baseline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.502" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/registerName"
+            android:layout_width="350dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_textview"
+            android:ems="10"
+            android:fontFamily="@font/urbanist_semibold"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:paddingStart="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/dark_grey_hint" />
+
+        <EditText
+            android:id="@+id/registerEmail"
+            android:layout_width="350dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_textview"
+            android:ems="10"
+            android:fontFamily="@font/urbanist_semibold"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/dark_grey_hint" />
+
+        <EditText
+            android:id="@+id/registerPassword"
+            android:layout_width="350dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_textview"
+            android:ems="10"
+            android:fontFamily="@font/urbanist_semibold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/dark_grey_hint" />
+
+        <Button
+            android:id="@+id/registerButton2"
+            android:layout_width="350dp"
+            android:layout_height="57dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/green_button"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="50dp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

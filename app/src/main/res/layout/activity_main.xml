@@ -4,22 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/mainConstraint"
+    android:background="@color/dark_grey">
+
+    <ListView
+        android:id="@+id/listviewer"
+        android:layout_width="410dp"
+        android:layout_height="628dp"
+        android:layout_marginTop="44dp"
+        android:dividerHeight="15dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linPaginate"
         android:layout_width="409dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/listviewer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintStart_toStartOf="@id/mainConstraint"
+        app:layout_constraintTop_toBottomOf="@+id/listviewer">
 
         <Button
             android:id="@+id/prev"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/green_button"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="Prev"
@@ -30,6 +46,7 @@
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/green_button"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="Next"
@@ -50,23 +67,64 @@
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/green_button"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="GO"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listviewer"
-        android:layout_width="409dp"
-        android:layout_height="814dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/mainConstraint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Home"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/createbutton"
+            app:layout_constraintStart_toStartOf="@id/bottomBar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/createbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Create"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/tentativeButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tentativeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Tentative"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/profileButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Profile"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/bottomBar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

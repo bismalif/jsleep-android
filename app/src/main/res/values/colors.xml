@@ -8,4 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="dark_grey">#181A20</color>
+    <color name="dark_grey2">#1F222A</color>
+    <color name="dark_grey_hint">#9E9E9E</color>
+    <color name="dark_greybutton">#35383F</color>
+    <color name="green_button">#1AB65C</color>
+    <color name="green_icon">#20BF63</color>
+    <color name="yellow_star">#FCD100</color>
+
+    35383F
+
+
 </resources>

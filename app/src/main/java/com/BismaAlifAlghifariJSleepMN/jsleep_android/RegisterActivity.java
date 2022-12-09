@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,17 +24,30 @@ public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText name, email,  password;
     Context mContext;
+    ImageView bgRegist;
+    TextView regtext;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         setContentView(R.layout.activity_register);
         mApiService = UtilsApi.getApiService();
         mContext = this;
         name = findViewById(R.id.registerName);
         email = findViewById(R.id.registerEmail);
         password = findViewById(R.id.registerPassword);
+//        bgRegist = findViewById(R.id.bg_register);
+        regtext = findViewById(R.id.registacc);
+
+        // Make the ImageView appear on top of the TextView
+        regtext.bringToFront();
+
         Button mainActivity = findViewById(R.id.registerButton2);
 
         mainActivity.setOnClickListener(new View.OnClickListener(){
