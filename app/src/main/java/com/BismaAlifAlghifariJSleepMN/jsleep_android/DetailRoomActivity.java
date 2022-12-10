@@ -12,7 +12,7 @@ import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Room;
 
 public class DetailRoomActivity extends AppCompatActivity {
 
-    TextView showName, showPrice, showSize, showAddress, showBedtype;
+    TextView showName, showPrice, showSize, showAddress, showBedtype, showCity;
     RadioButton ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
     public static Room room = MainActivity.listRoom.get(MainActivity.roomIndex);
 
@@ -29,6 +29,7 @@ public class DetailRoomActivity extends AppCompatActivity {
         showSize = findViewById(R.id.roomSizeVar);
         showAddress = findViewById(R.id.roomAddressVar);
         showBedtype = findViewById(R.id.roomBedTypeVar);
+        showCity = findViewById(R.id.roomCityVar);
 
         ac = findViewById(R.id.ac);
         refrig = findViewById(R.id.refrigerator);

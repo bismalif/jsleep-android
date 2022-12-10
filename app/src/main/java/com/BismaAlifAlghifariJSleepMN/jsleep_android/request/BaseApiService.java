@@ -4,6 +4,7 @@ import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Account;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.BedType;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.City;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Facility;
+import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Payment;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Renter;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Room;
 
@@ -56,4 +57,20 @@ public interface BaseApiService {
     @GET("room/getAllRoom")
     Call<List<Room>> getAllRoom(@Query("page") int page,
                                 @Query("pageSize") int pageSize);
+
+    /**
+     * A method that calls the API to create a payment.
+     * @param buyerId the buyer's id
+     * @param renterId the renter's id
+     * @param roomId the room's id
+     * @param from the start date
+     * @param to the end date
+     * @return a call to the API
+     */
+    @POST("payment/create")
+    Call<Payment> createPayment(@Query("buyerId") int buyerId,
+                                @Query("renterId") int renterId,
+                                @Query("roomId") int roomId,
+                                @Query("from") String from,
+                                @Query("to") String to);
 }
