@@ -22,8 +22,8 @@ public class CreatePaymentActivity extends AppCompatActivity {
     public static String enddate;
     public static String startdate;
     Button paymentdetail_button;
-    ImageView paymentdetail_image;
-    EditText paymentdetail_edittext_start, paymentdetail_edittext_end, backCreatePayment;
+    ImageView paymentdetail_image, backCreatePayment;
+    EditText paymentdetail_edittext_start, paymentdetail_edittext_end;
     DatePickerDialog datePickerDialogEnd,datePickerDialogStart;
 
     @Override
@@ -38,6 +38,8 @@ public class CreatePaymentActivity extends AppCompatActivity {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
+
+        backCreatePayment = findViewById(R.id.backCreatePayment);
 
         backCreatePayment.setOnClickListener(new View.OnClickListener() {
             @Override

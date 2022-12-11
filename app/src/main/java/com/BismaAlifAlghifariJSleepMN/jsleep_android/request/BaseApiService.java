@@ -73,4 +73,18 @@ public interface BaseApiService {
                                 @Query("roomId") int roomId,
                                 @Query("from") String from,
                                 @Query("to") String to);
+
+    @POST("payment/{id}/accept")
+    Call<Boolean> accept(@Path("id") int id);
+
+    @POST("payment/{id}/cancel")
+    Call<Boolean> cancel(@Path("id") int id);
+
+    @GET("payment/getOrderForRenter")
+    Call<List<Payment>> getOrderForRenter(@Query("renterId") int renterId,
+                                          @Query("page") int page,
+                                          @Query("pageSize") int pageSize);
+
 }
+
+

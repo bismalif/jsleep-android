@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Account;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     ListView listView;
     List<Room> activitylist;
+    TextView home, search, profile, createRoom;
     public static ArrayList<Room> listRoom;
     public static int roomIndex;
     int current;
@@ -48,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         current = 0;
         super.onCreate(savedInstanceState);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
 
         setContentView(R.layout.activity_main);
 
@@ -59,6 +66,27 @@ public class MainActivity extends AppCompatActivity {
         prev = findViewById(R.id.next);
         listView = (ListView) findViewById(R.id.listviewer);
         listView.setOnItemClickListener(this::onItemClick);
+
+        home = findViewById(R.id.homeButton);
+        search = findViewById(R.id.searchButton);
+        profile = findViewById(R.id.accountButton);
+        createRoom = findViewById(R.id.addButton);
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent (MainActivity.this, AboutMeActivity.class);
+                startActivity(move);
+            }
+        });
+
+        createRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent (MainActivity.this, CreateRoomActivity.class);
+                startActivity(move);
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:background="@color/dark_grey"
+    tools:context=".OrderDetailActivity">
+
+
+    <ImageView
+        android:id="@+id/backOrderDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_arrow_left"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Details"
+        android:textColor="@color/white"
+        android:fontFamily="@font/urbanist_bold"
+        android:paddingStart="20dp"
+        android:textSize="26dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backOrderDetail"
+        >
+
+    </TextView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:background="@drawable/rounded_lvitem"
+        android:padding="20dp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="40dp">
+
+
+        <TextView
+            android:id="@+id/orderdetail_textviewidbuyer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Id Pembeli"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/orderdetail_filltextviewidbuyer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/urbanist_semibold"
+            android:text="Id Pembeli"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewidbuyer" />
+
+        <TextView
+            android:id="@+id/orderdetail_textviewfromdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="From"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewidbuyer" />
+
+        <TextView
+            android:id="@+id/orderdetail_filltextviewfromdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/urbanist_regular"
+            android:text="From Date"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewfromdate" />
+
+        <TextView
+            android:id="@+id/orderdetail_textviewtodate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="To"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewfromdate" />
+
+        <TextView
+            android:id="@+id/orderdetail_filltextviewtodate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/urbanist_regular"
+            android:text="To Date"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewtodate" />
+
+        <TextView
+            android:id="@+id/orderdetail_textviewstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Status"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_filltextviewtodate" />
+
+        <TextView
+            android:id="@+id/orderdetail_filltextviewstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/urbanist_regular"
+            android:text="Status"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewstatus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/orderdetail_buttonaccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/urbanist_bold"
+        android:text="Accept"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="773dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/orderdetail_buttoncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/urbanist_bold"
+        android:text="Reject"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="773dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

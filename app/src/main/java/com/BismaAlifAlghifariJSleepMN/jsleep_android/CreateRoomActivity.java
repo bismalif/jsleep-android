@@ -3,6 +3,7 @@ package com.BismaAlifAlghifariJSleepMN.jsleep_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -120,7 +121,8 @@ public class CreateRoomActivity extends AppCompatActivity {
             public void onResponse(Call<Room> call, Response<Room> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(mContext, "Berhasil buat room", Toast.LENGTH_SHORT).show();
-
+                    Intent move = new Intent(CreateRoomActivity.this, MainActivity.class);
+                    startActivity(move);
                 }
             }
 

@@ -32,7 +32,7 @@ public class AboutMeActivity extends AppCompatActivity {
     TextView name, email, balance, logOutButton;
     EditText registerRentName,registerRentAddress, registerRentPhone;
     EditText renterName, renterAddress, renterPhone, topUpBalance;
-    Button buttonRegisterCancel, buttonCreateRenter, buttonRegisterRenter, topUpButton;
+    Button buttonRegisterCancel, buttonCreateRenter, buttonRegisterRenter, topUpButton, buttonOrderList;
     LinearLayout cardRenterDetails, cardRegisterRenter, cardAccount, cardButtonCreateRenter;
     Context mContext;
     BaseApiService mApiService;
@@ -70,6 +70,7 @@ public class AboutMeActivity extends AppCompatActivity {
         registerRentPhone = findViewById(R.id.registerRenterPhoneNumber);
 
         //Renter Details
+        buttonOrderList = findViewById(R.id.orderListButton);
         renterName = findViewById(R.id.detailRenterName);
         renterAddress = findViewById(R.id.detailRenterAddress);
         renterPhone = findViewById(R.id.detailRenterPhoneNumber);
@@ -84,6 +85,7 @@ public class AboutMeActivity extends AppCompatActivity {
         cardRegisterRenter.setVisibility(View.GONE);
         cardRenterDetails.setVisibility(View.GONE);
 
+
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +99,14 @@ public class AboutMeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TopUp(MainActivity.cookies.id,Double.parseDouble(topUpBalance.getText().toString()));
+            }
+        });
+
+        buttonOrderList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(AboutMeActivity.this, RenterOrderListActivity.class);
+                startActivity(move);
             }
         });
 

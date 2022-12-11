@@ -371,7 +371,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/detailBooknowButton"
-                android:layout_width="195dp"
+                android:layout_width="165dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
