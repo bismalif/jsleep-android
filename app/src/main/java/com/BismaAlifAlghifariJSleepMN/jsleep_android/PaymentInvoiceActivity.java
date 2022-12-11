@@ -25,7 +25,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.http.Query;
-
+/**
+ * The PaymentInvoiceActivity class is an Android activity that represents the payment session in the app.
+ *
+ * <p> It displays details of the payment, including the dates of the payment, the name and address of the room being rented,
+ * the price of the room, and the total price for the payment period. It also provides a button for creating the payment.</p>
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class PaymentInvoiceActivity extends AppCompatActivity{
     BaseApiService mApiService;
     Payment payment;

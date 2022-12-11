@@ -22,10 +22,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The {@code LoginActivity} class provides the UX for logging in.
+ *
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class LoginActivity extends AppCompatActivity {
+    /**
+     * A {@link BaseApiService} instance for making API requests.
+     */
     BaseApiService mApiService;
-    EditText email,password;
+
+    /**
+     * The {@link Context} of the activity.
+     */
     Context mContext;
+
+    /**
+     * The {@link EditText} where the user can enter their email and password.
+     */
+    EditText email,password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +100,12 @@ public class LoginActivity extends AppCompatActivity {
         return null;
     }
 
+    /**
+     * This function is used to request login to the server
+     *
+     * @return Account object
+     * @see Account
+     */
     protected Account requestLogin(){
         mApiService.login(email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override

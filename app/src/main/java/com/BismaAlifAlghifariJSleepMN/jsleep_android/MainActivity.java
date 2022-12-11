@@ -29,17 +29,46 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The {@code MainActivity} class provides the UX for the main screen.
+ *
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static Account cookies;
 
+    /**
+     * A {@link BaseApiService} instance for making API requests.
+     */
     BaseApiService mApiService;
+
+    /**
+     * The {@link Context} of the activity.
+     */
     Context mContext;
+
+    /**
+     * The `ListView` used to display the list of rooms.
+     */
     ListView listView;
+
+    /**
+     * The list of rooms to be displayed.
+     */
     List<Room> activitylist;
     TextView home, search, profile, historyButton;
     public static ArrayList<Room> listRoom;
+
+    /**
+     * The index of the selected room.
+     */
     public static int roomIndex;
+
+    /**
+     * The current page of rooms being displayed.
+     */
     int current;
     Button next, prev;
     int currentPage;

@@ -14,12 +14,33 @@ import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Room;
 
 import java.util.ArrayList;
 
+/**
+ * The {@code ListviewCustomAdapter} class provides the UX for the list of rooms.
+ *
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class ListviewCustomAdapter extends ArrayAdapter<Room> {
 
+    /**
+     * Constructor for OrderListAdapter.
+     *
+     * @param context The context in which the adapter is being used.
+     * @param rooms The list of rooms to be displayed.
+     */
     public ListviewCustomAdapter(@NonNull Context context, ArrayList<Room> rooms) {
         super(context, 0, rooms);
     }
 
+
+    /**
+     * This method is used to create the view for an item in the list of rooms.
+     *
+     * @param position The position of the item in the list.
+     * @param convertView The view to be converted.
+     * @param parent The parent view group.
+     * @return The view for the item at the specified position.
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){

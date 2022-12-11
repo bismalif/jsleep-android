@@ -22,6 +22,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * This class represents an activity that displays details of an order made by a buyer.
+ *
+ * <p>The activity allows the renter to accept or cancel the order.</p>
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class OrderDetailActivity extends AppCompatActivity {
     BaseApiService mApiService;
     Context mContext;
@@ -93,6 +100,12 @@ public class OrderDetailActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method is used to accept an order with a given ID.
+     *
+     * @param id The ID of the order to be accepted.
+     * @return Boolean value indicating whether the order was successfully accepted.
+     */
     protected Boolean acceptOrder(int id) {
         //System.out.println(pageSize);
         mApiService.accept(id).enqueue(new Callback<Boolean>() {
@@ -119,6 +132,12 @@ public class OrderDetailActivity extends AppCompatActivity {
         return null;
     }
 
+    /**
+     * This method is used to cancel an order with a given ID.
+     *
+     * @param id The ID of the order to be cancelled.
+     * @return Boolean value indicating whether the order was successfully cancelled.
+     */
     protected Boolean cancelOrder(int id) {
         //System.out.println(pageSize);
         mApiService.cancel(id).enqueue(new Callback<Boolean>() {

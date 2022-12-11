@@ -13,16 +13,34 @@ import android.widget.TextView;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Facility;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Room;
 
+/**
+ * The {@code RoomDetailActivity} class provides the UX for displaying the details of a room.
+ *
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ *
+ */
 public class DetailRoomActivity extends AppCompatActivity {
 
     TextView showName, showPrice, showSize, showAddress, showBedtype, showCity;
+    /**
+     * The {@link RadioButton} that displays the room's facility : ac, refrigerator, bath tub, balcony
+     * restaurant, pool, and fitness center.
+     */
     RadioButton ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
+
+    /**
+     * Button for booking a room.
+     */
     Button buttonBookNow;
+
+    /**
+     * The renter's room information.
+     */
     public static Room room;
 
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_room);

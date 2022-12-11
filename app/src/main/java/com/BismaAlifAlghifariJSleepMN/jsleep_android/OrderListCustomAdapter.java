@@ -15,13 +15,32 @@ import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Payment;
 import java.text.DateFormat;
 import java.util.ArrayList;
 
+/**
+ * This class is an adapter used to display a list of orders in a ListView.
+ *
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class OrderListCustomAdapter extends ArrayAdapter<Payment> {
 
-
+    /**
+     * This class is an adapter used to display a list of orders in a ListView.
+     *
+     * @author Amrita Deviayu Tunjungbiru
+     * @version 1.0
+     */
     public OrderListCustomAdapter(@NonNull Context context, ArrayList<Payment> order) {
         super(context, 0, order);
     }
 
+    /**
+     * This method is used to create the view for an item in the list of orders.
+     *
+     * @param position The position of the item in the list.
+     * @param convertView The view to be converted.
+     * @param parent The parent view group.
+     * @return The view for the item at the specified position.
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){

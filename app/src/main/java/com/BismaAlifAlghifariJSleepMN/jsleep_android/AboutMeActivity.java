@@ -28,16 +28,35 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/**
+ * The {@code ProfileActivity} class provides the UI and UX for the profile page.
+ *
+ *
+ * @author Bisma Alif Alghifari
+ * @version 1.0
+ */
 public class AboutMeActivity extends AppCompatActivity {
+    /**
+     * The {@link TextView} that displays the user's name, user's email, user's balance,
+     * the amount the user wants to top up their account with, option for user to log out, and name,
+     * address, and phone number of the registered renter.
+     */
     TextView name, email, balance, logOutButton;
+    /**
+     * The {@link EditText} where the user can enter the name, address, and phone number of a renter to register.
+     */
     EditText registerRentName,registerRentAddress, registerRentPhone;
     EditText renterName, renterAddress, renterPhone, topUpBalance;
+    /**
+     * Button for topping up the user's account, registering a new renter, confirms the new renter,
+     * and cancelling the registration of the new renter.
+     */
     Button buttonRegisterCancel, buttonCreateRenter, buttonRegisterRenter, topUpButton, buttonOrderList;
     LinearLayout cardRenterDetails, cardRegisterRenter, cardAccount, cardButtonCreateRenter;
     Context mContext;
     ImageView createRoomButton, backAboutMe;
     BaseApiService mApiService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,6 +206,15 @@ public class AboutMeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This function is used to request a new renter
+     *
+     * @param id  the id
+     * @param username  the username
+     * @param address  the address
+     * @param phoneNumber  the phone number
+     * @return Renter
+     */
     protected Renter requestRenter(int id, String username, String address, String phoneNumber ) throws NullPointerException {
         System.out.println("Id: " + id);
         System.out.println("Username: " + username);
@@ -216,6 +244,13 @@ public class AboutMeActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * This function is used to top up the user's balance
+     *
+     * @param id  the id
+     * @param balance the user's balance
+     * @return Renter
+     */
     protected Renter TopUp(int id, double balance) {
 
         mApiService.topUp(id, balance).enqueue(new Callback<Boolean>() {
