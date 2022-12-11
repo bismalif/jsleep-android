@@ -26,6 +26,11 @@ public class DetailRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_room);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         room = MainActivity.listRoom.get(MainActivity.roomIndex);
 
         buttonBookNow = findViewById(R.id.detailBooknowButton);

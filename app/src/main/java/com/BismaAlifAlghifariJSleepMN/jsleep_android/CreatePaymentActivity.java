@@ -21,23 +21,23 @@ public class CreatePaymentActivity extends AppCompatActivity {
     private CalendarView calendarView;
     public static String enddate;
     public static String startdate;
-    Button paymentdetail_button;
-    ImageView paymentdetail_image, backCreatePayment;
-    EditText paymentdetail_edittext_start, paymentdetail_edittext_end;
+    Button continueInvoiceButton;
+    ImageView backCreatePayment;
+    EditText checkInDate, checkOutDate;
     DatePickerDialog datePickerDialogEnd,datePickerDialogStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_payment);
-        calendarView = findViewById(R.id.paymentdetail_calendar);
+
+        calendarView = findViewById(R.id.pdCalender);
         calendarView.setWeekDayTextAppearance(R.style.CalendarViewDateTextAppearance);
 
-        try
-        {
+        try {
             this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
         }
-        catch (NullPointerException e){}
 
         backCreatePayment = findViewById(R.id.backCreatePayment);
 
@@ -60,7 +60,7 @@ public class CreatePaymentActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
-                        paymentdetail_edittext_start.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        checkInDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                         startdate = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
                     }
                 }, mYear, mMonth, mDay);
@@ -71,52 +71,32 @@ public class CreatePaymentActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
-                        paymentdetail_edittext_end.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        checkOutDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                         enddate = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
                     }
                 }, mYear, mMonth, mDay);
 
-        paymentdetail_edittext_start = findViewById(R.id.paymentdetail_edittext_start);
-        paymentdetail_edittext_end = findViewById(R.id.paymentdetail_edittext_end);
+        checkInDate = findViewById(R.id.checkInDate);
+        checkOutDate = findViewById(R.id.chechOutDate);
 
-        paymentdetail_edittext_start.setOnClickListener(v -> {
+        checkInDate.setOnClickListener(v -> {
             datePickerDialogStart.show();
         });
 
-        paymentdetail_edittext_end.setOnClickListener(v -> {
+        checkOutDate.setOnClickListener(v -> {
             datePickerDialogEnd.show();
         });
 
+        continueInvoiceButton = findViewById(R.id.paymentdetail_button);
 
-        paymentdetail_button = findViewById(R.id.paymentdetail_button);
-        paymentdetail_image = findViewById(R.id.paymentdetail_title_icon);
-        paymentdetail_button.setOnClickListener(new android.view.View.OnClickListener() {
+        continueInvoiceButton.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
-                startdate = paymentdetail_edittext_start.getText().toString();
-                enddate = paymentdetail_edittext_end.getText().toString();
-                Intent move = new Intent(CreatePaymentActivity.this,PaymentInvoiceActivity.class);
+                startdate = checkInDate.getText().toString();
+                enddate = checkOutDate.getText().toString();
+                Intent move = new Intent(CreatePaymentActivity.this, PaymentInvoiceActivity.class);
                 startActivity(move);
             }
         });
-//
-//        // Set the text color of the CalendarView
-//        calendarView.setDateTextAppearance(R.style.CalendarViewDateTextAppearance);
-//
-//        // Create a custom WeekDayFormatter
-//        WeekDayFormatter weekDayFormatter = new WeekDayFormatter() {
-//            @Override
-//            public CharSequence format(int dayOfWeek) {
-//                // Use the text color specified in the CalendarViewDateTextAppearance style
-//                SpannableString spannableString = new SpannableString(String.valueOf(dayOfWeek));
-//                spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.calendar_view_date_text_color)),
-//                        0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-//                return spannableString;
-//            }
-//        };
-//
-//
-//        // Set the WeekDayFormatter on the CalendarView
-//        calendarView.weekDayFormatter = weekDayFormatter
     }
 }

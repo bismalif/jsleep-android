@@ -46,9 +46,6 @@ public class RenterOrderListActivity extends AppCompatActivity {
         orderList.setOnItemClickListener(this::onItemClick);
         getOrderForRenter(MainActivity.cookies.id);
 
-
-
-
     }
 
     protected void getOrderForRenter(int renterId){

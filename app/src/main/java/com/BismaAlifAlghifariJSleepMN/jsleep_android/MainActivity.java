@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     ListView listView;
     List<Room> activitylist;
-    TextView home, search, profile, createRoom;
+    TextView home, search, profile, historyButton;
     public static ArrayList<Room> listRoom;
     public static int roomIndex;
     int current;
@@ -62,15 +62,15 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
         activitylist = getRoomList(current);
 
-        next = findViewById(R.id.prev);
-        prev = findViewById(R.id.next);
+        next = findViewById(R.id.next);
+        prev = findViewById(R.id.prev);
         listView = (ListView) findViewById(R.id.listviewer);
         listView.setOnItemClickListener(this::onItemClick);
 
         home = findViewById(R.id.homeButton);
         search = findViewById(R.id.searchButton);
         profile = findViewById(R.id.accountButton);
-        createRoom = findViewById(R.id.addButton);
+        historyButton = findViewById(R.id.historyButton);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        createRoom.setOnClickListener(new View.OnClickListener() {
+        historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent move = new Intent (MainActivity.this, CreateRoomActivity.class);

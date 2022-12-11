@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class AboutMeActivity extends AppCompatActivity {
     Button buttonRegisterCancel, buttonCreateRenter, buttonRegisterRenter, topUpButton, buttonOrderList;
     LinearLayout cardRenterDetails, cardRegisterRenter, cardAccount, cardButtonCreateRenter;
     Context mContext;
+    ImageView createRoomButton, backAboutMe;
     BaseApiService mApiService;
 
     @Override
@@ -43,6 +45,9 @@ public class AboutMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_me);
         mApiService = UtilsApi.getApiService();
         mContext = this;
+
+        backAboutMe = findViewById(R.id.backAboutMe);
+
         //TopUp
         topUpButton = findViewById(R.id.topUpBtn);
         topUpBalance = findViewById(R.id.Topuptxt);
@@ -74,6 +79,7 @@ public class AboutMeActivity extends AppCompatActivity {
         renterName = findViewById(R.id.detailRenterName);
         renterAddress = findViewById(R.id.detailRenterAddress);
         renterPhone = findViewById(R.id.detailRenterPhoneNumber);
+        createRoomButton = findViewById(R.id.addRoomButton);
 
         //Card
         cardButtonCreateRenter = findViewById(R.id.registerRenter);
@@ -85,6 +91,21 @@ public class AboutMeActivity extends AppCompatActivity {
         cardRegisterRenter.setVisibility(View.GONE);
         cardRenterDetails.setVisibility(View.GONE);
 
+        backAboutMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(AboutMeActivity.this,MainActivity.class);
+                startActivity(move);
+            }
+        });
+
+        createRoomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(AboutMeActivity.this,CreateRoomActivity.class);
+                startActivity(move);
+            }
+        });
 
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override

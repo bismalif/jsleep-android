@@ -29,15 +29,15 @@ public class OrderListAdapter extends ArrayAdapter<Payment> {
             currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.order_list_layout,parent,false);
         }
 
-        Payment currentOrder = getItem(position);
+        Payment orderList = getItem(position);
 
         TextView date = currentItemView.findViewById(R.id.payment_date);
         TextView status = currentItemView.findViewById(R.id.payment_status);
 
-        String dateText = currentOrder.to.toString() + " - " + currentOrder.from.toString();
+        String dateText = orderList.to.toString() + " - " + orderList.from.toString();
         date.setText(dateText);
 
-        String statusText = "Status: " + currentOrder.status;
+        String statusText = "Status: " + orderList.status;
         status.setText(statusText);
 
 

@@ -816,6 +816,17 @@
                 android:textColor="@color/white"
                 android:textSize="23dp" />
 
+            <ImageView
+                android:id="@+id/addRoomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_addroom"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewRent2"
+                />
+
             <Button
                 android:id="@+id/orderListButton"
                 android:layout_width="140dp"
