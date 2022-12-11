@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     activitylist = response.body();
                     assert activitylist != null;
                     listRoom = new ArrayList<Room>(activitylist);
-                    CustomListAdapter adapter = new CustomListAdapter(mContext, listRoom);
+                    ListviewCustomAdapter adapter = new ListviewCustomAdapter(mContext, listRoom);
                     listView.setAdapter(adapter);
                     System.out.println("Get Room Success");
 

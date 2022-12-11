@@ -16,6 +16,8 @@ import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Payment;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.request.BaseApiService;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.request.UtilsApi;
 
+import java.text.SimpleDateFormat;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -49,9 +51,15 @@ public class OrderDetailActivity extends AppCompatActivity {
         accept = findViewById(R.id.orderdetail_buttonaccept);
         cancel = findViewById(R.id.orderdetail_buttoncancel);
 
+
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, MMM d yyyy");
+        String dateFrom = dateFormat.format(payment.from);
+        String dateTo = dateFormat.format(payment.to);
+
         buyerId.setText(String.valueOf(payment.buyerId));
-        from.setText(payment.from.toString());
-        to.setText(payment.to.toString());
+        from.setText(dateFrom);
+        to.setText(dateTo);
         status.setText(payment.status.toString());
 
         backOrderDetail.setOnClickListener(new View.OnClickListener() {

@@ -51,6 +51,10 @@ public class DetailRoomActivity extends AppCompatActivity {
         pool = findViewById(R.id.pool);
         fitness = findViewById(R.id.fitness);
 
+
+        String City = String.valueOf(room.city);
+        showCity.setText(City);
+
         showName.setText(room.name);
         String price = "Rp. " + String.valueOf(room.price.price + "/ Night");
         showPrice.setText(price);
@@ -58,6 +62,7 @@ public class DetailRoomActivity extends AppCompatActivity {
         showSize.setText(size);
         showAddress.setText(room.address);
 //        showBedtype.setText(room.bedType.toString());
+
 
         String finalBed = room.bedType.toString() + " BED";
         System.out.println(finalBed);

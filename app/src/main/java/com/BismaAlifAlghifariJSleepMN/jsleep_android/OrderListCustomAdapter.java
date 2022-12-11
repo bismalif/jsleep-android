@@ -12,12 +12,13 @@ import androidx.annotation.Nullable;
 
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Payment;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 
-public class OrderListAdapter extends ArrayAdapter<Payment> {
+public class OrderListCustomAdapter extends ArrayAdapter<Payment> {
 
 
-    public OrderListAdapter(@NonNull Context context, ArrayList<Payment> order) {
+    public OrderListCustomAdapter(@NonNull Context context, ArrayList<Payment> order) {
         super(context, 0, order);
     }
 
@@ -26,7 +27,7 @@ public class OrderListAdapter extends ArrayAdapter<Payment> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
         View currentItemView = convertView;
         if(currentItemView == null){
-            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.order_list_layout,parent,false);
+            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.order_list_custom_layout,parent,false);
         }
 
         Payment orderList = getItem(position);
@@ -34,7 +35,7 @@ public class OrderListAdapter extends ArrayAdapter<Payment> {
         TextView date = currentItemView.findViewById(R.id.payment_date);
         TextView status = currentItemView.findViewById(R.id.payment_status);
 
-        String dateText = orderList.to.toString() + " - " + orderList.from.toString();
+        String dateText = DateFormat.getDateInstance().format(orderList.to) + " - " + DateFormat.getDateInstance().format(orderList.from);
         date.setText(dateText);
 
         String statusText = "Status: " + orderList.status;

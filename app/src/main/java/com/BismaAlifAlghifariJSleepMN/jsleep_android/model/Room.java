@@ -3,6 +3,15 @@ package com.BismaAlifAlghifariJSleepMN.jsleep_android.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * The `Room` class represents a room in a hotel.
+ *
+ * <p>This class extends the `Serializable` class and adds additional attributes and methods related to the room,
+ * such as the room number, the room type, and methods for checking the availability of a room and making a booking.</p>
+ *
+ * @author Bisma Alif Alghifari
+ * @see Serializable
+ */
 public class Room extends Serializable {
     public int size;
     public String name;

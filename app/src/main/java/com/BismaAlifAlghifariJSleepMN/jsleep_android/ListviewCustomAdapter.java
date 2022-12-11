@@ -5,20 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.BismaAlifAlghifariJSleepMN.jsleep_android.R;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.model.Room;
 
 import java.util.ArrayList;
 
-public class CustomListAdapter extends ArrayAdapter<Room> {
+public class ListviewCustomAdapter extends ArrayAdapter<Room> {
 
-    public CustomListAdapter(@NonNull Context context, ArrayList<Room> rooms) {
+    public ListviewCustomAdapter(@NonNull Context context, ArrayList<Room> rooms) {
         super(context, 0, rooms);
     }
 
@@ -28,7 +26,7 @@ public class CustomListAdapter extends ArrayAdapter<Room> {
 
         View currentItemView = convertView;
         if(currentItemView == null){
-            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.custom_list_layout,parent,false);
+            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.listview_custom_layout,parent,false);
         }
 
         Room currentRoom = getItem(position);
