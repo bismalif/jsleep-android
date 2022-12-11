@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
@@ -22,7 +23,7 @@ public class CreatePaymentActivity extends AppCompatActivity {
     public static String startdate;
     Button paymentdetail_button;
     ImageView paymentdetail_image;
-    EditText paymentdetail_edittext_start, paymentdetail_edittext_end;
+    EditText paymentdetail_edittext_start, paymentdetail_edittext_end, backCreatePayment;
     DatePickerDialog datePickerDialogEnd,datePickerDialogStart;
 
     @Override
@@ -30,12 +31,21 @@ public class CreatePaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_payment);
         calendarView = findViewById(R.id.paymentdetail_calendar);
+        calendarView.setWeekDayTextAppearance(R.style.CalendarViewDateTextAppearance);
 
         try
         {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
+
+        backCreatePayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(CreatePaymentActivity.this, DetailRoomActivity.class);
+                startActivity(move);
+            }
+        });
 
 
         final Calendar c = Calendar.getInstance();

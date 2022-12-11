@@ -2,7 +2,10 @@ package com.BismaAlifAlghifariJSleepMN.jsleep_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -14,7 +17,8 @@ public class DetailRoomActivity extends AppCompatActivity {
 
     TextView showName, showPrice, showSize, showAddress, showBedtype, showCity;
     RadioButton ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
-    public static Room room = MainActivity.listRoom.get(MainActivity.roomIndex);
+    Button buttonBookNow;
+    public static Room room;
 
 
     @Override
@@ -22,7 +26,9 @@ public class DetailRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_room);
+        room = MainActivity.listRoom.get(MainActivity.roomIndex);
 
+        buttonBookNow = findViewById(R.id.detailBooknowButton);
 
         showName = findViewById(R.id.roomNameVar);
         showPrice = findViewById(R.id.roomPriceVar);
@@ -41,10 +47,16 @@ public class DetailRoomActivity extends AppCompatActivity {
         fitness = findViewById(R.id.fitness);
 
         showName.setText(room.name);
-        showPrice.setText(String.valueOf(room.price.price));
-        showSize.setText(String.valueOf(room.size));
+        String price = "Rp. " + String.valueOf(room.price.price + "/ Night");
+        showPrice.setText(price);
+        String size = String.valueOf(room.size) + " M";
+        showSize.setText(size);
         showAddress.setText(room.address);
-        showBedtype.setText(room.bedType.toString());
+//        showBedtype.setText(room.bedType.toString());
+
+        String finalBed = room.bedType.toString() + " BED";
+        System.out.println(finalBed);
+        showBedtype.setText(finalBed);
 
         for (int i = 0; i < room.facility.size(); i++) {
             if (room.facility.get(i).equals(Facility.AC )) {
@@ -65,6 +77,15 @@ public class DetailRoomActivity extends AppCompatActivity {
                 fitness.setChecked(true);
             }
         }
+
+        buttonBookNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(DetailRoomActivity.this, CreatePaymentActivity.class);
+                startActivity(move);
+            }
+        });
+
 
     }
 

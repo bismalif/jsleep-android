@@ -11,6 +11,7 @@
     >
 
     <ImageView
+        android:id="@+id/backCreatePayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_arrow_left"
@@ -20,15 +21,16 @@
 
     <TextView
         android:id="@+id/paymentdetail_title"
-        android:layout_marginTop="5dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/backCreatePayment"
+        android:layout_marginStart="20dp"
+
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Pemesanan"
+        android:text="Select Date"
         android:fontFamily="@font/urbanist_bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         />
 
@@ -50,7 +52,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="15dp"
-            android:src="@drawable/icon_star"
+            android:src="@drawable/icon_hotel_listview"
             />
 
         <TextView
@@ -59,7 +61,8 @@
             android:layout_height="wrap_content"
             android:text="Hotel Melati"
             android:fontFamily="@font/urbanist_bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textSize="23dp"
             app:layout_constraintStart_toEndOf="@+id/paymentdetail_title_icon"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="20dp"
@@ -68,24 +71,35 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_goneMarginTop="8dp"
             android:text="Jl. Haji Kodja"
+            android:drawablePadding="5dp"
             android:fontFamily="@font/urbanist_bold"
-            android:textColor="@color/black"
+            android:textColor="@color/green_icon"
+            android:textSize="12dp"
+            android:drawableStart="@drawable/icon_mappin"
             android:layout_marginTop="2dp"
             android:layout_marginStart="15dp"
             app:layout_constraintStart_toEndOf="@+id/paymentdetail_title_icon"
-            app:layout_constraintTop_toBottomOf="@+id/paymentdetail_title_name"
+            app:layout_constraintTop_toBottomOf="@+id/paymentdetail_title_name" />
 
 
-            />
+        <View
+            android:layout_marginVertical="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/rounded_button"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/layoutCalender"
         android:layout_width="match_parent"
         android:padding="20dp"
         android:layout_marginTop="20dp"
-        android:layout_height="600dp"
+        android:layout_height="380dp"
         android:background="@drawable/rounded_lvitem"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         >
@@ -95,42 +109,86 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="match_parent"
+            android:theme="@style/CalenderViewCustom"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
             android:layout_height="wrap_content"
             android:dateTextAppearance="@style/CalendarViewDateTextAppearance"
             android:background="@color/dark_grey2" />
 
-        <EditText
-            android:id="@+id/paymentdetail_edittext_start"
-            android:layout_width="130dp"
-            android:text="Start Date"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/paymentdetail_calendar"
-            />
-        <EditText
-            android:id="@+id/paymentdetail_edittext_end"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="End Date"
-            app:layout_constraintTop_toBottomOf="@+id/paymentdetail_calendar"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
 
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/paymentdetail_button"
-            android:text="Continue"
-            android:fontFamily="@font/urbanist_bold"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:layout_width="match_parent"
-            android:background="@drawable/rounded_button"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/checkIn"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Check In"
+        android:fontFamily="@font/urbanist_semibold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCalender"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="570dp" />
+
+    <EditText
+        android:id="@+id/paymentdetail_edittext_start"
+        android:layout_width="130dp"
+        android:layout_height="56dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/urbanist_medium"
+        android:paddingStart="20dp"
+
+        android:background="@drawable/rounded_textview"
+        app:layout_constraintTop_toBottomOf="@id/checkIn"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="570dp" />
+
+    <TextView
+        android:id="@+id/checkOut"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Check Out"
+        android:fontFamily="@font/urbanist_semibold"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCalender"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="570dp" />
+
+    <EditText
+        android:id="@+id/paymentdetail_edittext_end"
+        android:layout_width="130dp"
+        android:layout_height="56dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/urbanist_medium"
+        android:paddingStart="20dp"
+        android:background="@drawable/rounded_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkOut"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="570dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/paymentdetail_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/urbanist_bold"
+        android:layout_marginBottom="40dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="738dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

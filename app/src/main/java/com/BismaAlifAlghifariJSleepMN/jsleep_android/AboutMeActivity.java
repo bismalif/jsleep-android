@@ -20,13 +20,16 @@ import com.BismaAlifAlghifariJSleepMN.jsleep_android.request.BaseApiService;
 import com.BismaAlifAlghifariJSleepMN.jsleep_android.request.UtilsApi;
 
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
 public class AboutMeActivity extends AppCompatActivity {
-    TextView name, email, balance;
+    TextView name, email, balance, logOutButton;
     EditText registerRentName,registerRentAddress, registerRentPhone;
     EditText renterName, renterAddress, renterPhone, topUpBalance;
     Button buttonRegisterCancel, buttonCreateRenter, buttonRegisterRenter, topUpButton;
@@ -44,14 +47,16 @@ public class AboutMeActivity extends AppCompatActivity {
         topUpButton = findViewById(R.id.topUpBtn);
         topUpBalance = findViewById(R.id.Topuptxt);
 
+
         //Acc Details
         name = findViewById(R.id.detailName);
         email = findViewById(R.id.detailEmail);
         balance = findViewById(R.id.detailBalance);
+        logOutButton = findViewById(R.id.logOutButton);
 
         name.setText(MainActivity.cookies.name);
         email.setText(MainActivity.cookies.email);
-        String balanceText = "Rp. " + String.valueOf(MainActivity.cookies.balance);
+        String balanceText = "Rp." + String.valueOf(MainActivity.cookies.balance);
         balance.setText(balanceText);
 
         //Button Reg
@@ -79,12 +84,24 @@ public class AboutMeActivity extends AppCompatActivity {
         cardRegisterRenter.setVisibility(View.GONE);
         cardRenterDetails.setVisibility(View.GONE);
 
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(AboutMeActivity.this,LoginActivity.class);
+                startActivity(move);
+                MainActivity.cookies = null;
+            }
+        });
+
         topUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TopUp(MainActivity.cookies.id,Double.parseDouble(topUpBalance.getText().toString()));
             }
         });
+
+
+
 
         if (MainActivity.cookies.renter == null) {
             cardButtonCreateRenter.setVisibility(View.VISIBLE);
@@ -151,8 +168,9 @@ public class AboutMeActivity extends AppCompatActivity {
                     Renter renter = response.body();
                     MainActivity.cookies.renter = renter;
                     Toast.makeText(mContext, "Register Renter Successful", Toast.LENGTH_SHORT).show();
-                    Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
-                    startActivity(move);
+                    Intent startIntent = getIntent();
+                    finish();
+                    startActivity(startIntent);
 
 
                 }
@@ -177,7 +195,9 @@ public class AboutMeActivity extends AppCompatActivity {
                     MainActivity.cookies.balance = MainActivity.cookies.balance + balance;
                     System.out.println("BALANCE ADDED");
                     Toast.makeText(mContext, "Top Up Successful!", Toast.LENGTH_LONG).show();
-
+                    Intent startIntent = getIntent();
+                    finish();
+                    startActivity(startIntent);
 
                 }
             }

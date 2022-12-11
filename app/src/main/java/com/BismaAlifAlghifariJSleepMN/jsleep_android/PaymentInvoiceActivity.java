@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
     Context mContext;
     Button createbutton;
     TextView createpayment_from,createpayment_to;
+    ImageView backPaymentInvoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +36,23 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
         mContext = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_invoice);
+
+        backPaymentInvoice = findViewById(R.id.backPaymentInvoie);
+
         createbutton = findViewById(R.id.createpayment_button);
         createpayment_from = findViewById(R.id.createpayment_from);
         createpayment_to = findViewById(R.id.createpayment_to);
 
         createpayment_from.setText(CreatePaymentActivity.startdate);
         createpayment_to.setText(CreatePaymentActivity.enddate);
+
+        backPaymentInvoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(PaymentInvoiceActivity.this, CreatePaymentActivity.class);
+                startActivity(move);
+            }
+        });
 
         createbutton.setOnClickListener(new View.OnClickListener() {
             @Override
